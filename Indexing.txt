@@ -1,0 +1,26 @@
+use c;
+CREATE TABLE employee (
+    id INT PRIMARY KEY,
+    name VARCHAR(100),
+    dept VARCHAR(50),
+    salary INT,
+    designation VARCHAR(100),
+    email VARCHAR(100) UNIQUE
+);
+
+
+INSERT INTO employee (id, name, dept, salary, designation, email) VALUES
+(1, 'Rahul Sharma', 'IT', 60000.00, 'Software Developer', 'rahul.sharma@example.com'),
+(2, 'Anita Desai', 'HR', 50000.00, 'HR Executive', 'anita.desai@example.com'),
+(3, 'Vikram Rao', 'Finance', 65000.00, 'Accountant', 'vikram.rao@example.com'),
+(4, 'Priya Menon', 'Marketing', 55000.00, 'Marketing Manager', 'priya.menon@example.com'),
+(5, 'Sunil Verma', 'Sales', 58000.00, 'Sales Executive', 'sunil.verma@example.com');
+
+CREATE INDEX idx_dept ON employee(dept);
+CREATE INDEX idx_designation ON employee(designation);
+SHOW INDEX FROM employee;
+
+
+SELECT * FROM employee WHERE dept = 'IT';
+SELECT * FROM employee WHERE designation = 'Accountant';
+

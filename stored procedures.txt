@@ -1,0 +1,11 @@
+use classicmodels;
+delimiter $$
+CREATE PROCEDURE GetCustomers()
+BEGIN
+SELECT customerName,city,state,postalcode,country
+FROM
+customers
+ORDER BY customerName;
+END $$
+delimiter ;
+call GetCustomers();
